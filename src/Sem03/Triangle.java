@@ -1,14 +1,7 @@
 package Sem03;
 
 public class Triangle extends Figure {
-    /**
-     * Стороны треугольника
-     * @param a
-     * @param b
-     * @param c
-     */
     public Triangle(int a, int b, int c) {
-
         super(a, b, c);
     }
 
@@ -17,9 +10,13 @@ public class Triangle extends Figure {
      */
     @Override
     public void area() {
-        int p = (a + b + c) / 2;
-        double s = Math.sqrt((p * ((p - a) * (p - b) * (p - c))));
-        System.out.println(s);
+        if((a > 0) && (b > 0) && (c > 0)) {
+            double p = (a + b + c) / 2;
+            double s = Math.sqrt((p * ((p - a) * (p - b) * (p - c))));
+            System.out.println("Площадь треугольника равна " + s);
+        } else {
+            System.out.println("Стороны треугольника должны быть больше нуля!");
+        }
     }
 
 }
